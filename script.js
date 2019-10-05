@@ -78,7 +78,7 @@ window.onload = function() {
     resetBtn.addEventListener("click", function() {
 
         var xhr = new XMLHttpRequest();
-        xhr.open("GET", "http://zipcloud.ibsnet.co.jp/api/search?zipcode=7830060", true);
+        xhr.open("GET", "https://api.zipaddress.net/?zipcode=305-0056", true);
         xhr.onload = function (e) {
           if (xhr.readyState === 4) {
             if (xhr.status === 200) {
