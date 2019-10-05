@@ -77,6 +77,22 @@ window.onload = function() {
 
     resetBtn.addEventListener("click", function() {
 
+        var xhr = new XMLHttpRequest();
+        xhr.open("GET", "http://zipcloud.ibsnet.co.jp/api/search?zipcode=7830060", true);
+        xhr.onload = function (e) {
+          if (xhr.readyState === 4) {
+            if (xhr.status === 200) {
+              console.log(xhr.responseText);
+            } else {
+              console.error(xhr.statusText);
+            }
+          }
+        };
+        xhr.onerror = function (e) {
+          console.error(xhr.statusText);
+        };
+        xhr.send(null);
+
     }, false);
 
     for (let text of texts) {
